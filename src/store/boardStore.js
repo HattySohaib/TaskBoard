@@ -60,8 +60,38 @@ const createSampleData = () => {
     {
       id: boardId,
       name: "Sample Project",
+      description:
+        "This is a sample project board for task management and organization.",
       columns,
       createdAt: new Date().toISOString(),
+    },
+    {
+      id: uuidv4(),
+      name: "Website Redesign",
+      description: "Tracking tasks related to the website redesign initiative.",
+      columns: [
+        {
+          id: uuidv4(),
+          name: "Backlog",
+          tasks: createDummyTasks(2, boardId),
+        },
+        {
+          id: uuidv4(),
+          name: "In Progress",
+          tasks: createDummyTasks(1, boardId),
+        },
+        {
+          id: uuidv4(),
+          name: "Review",
+          tasks: createDummyTasks(2, boardId),
+        },
+        {
+          id: uuidv4(),
+          name: "Done",
+          tasks: createDummyTasks(3, boardId),
+        },
+      ],
+      createdAt: new Date(Date.now() - 86400000 * 2).toISOString(), // 2 days ago
     },
   ];
 };
@@ -86,10 +116,11 @@ export const useBoardStore = create(
       },
 
       // Board operations
-      createBoard: (name) => {
+      createBoard: (name, description = "") => {
         const newBoard = {
           id: uuidv4(),
           name,
+          description,
           columns: [],
           createdAt: new Date().toISOString(),
         };

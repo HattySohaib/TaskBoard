@@ -61,43 +61,6 @@ const Sidebar = () => {
           )}
         </button>
       </div>
-      <div className="mb-6">
-        {" "}
-        <button
-          onClick={() => setShowNewBoardInput((prev) => !prev)}
-          className={`flex items-center text-sm ${
-            darkMode
-              ? "text-gray-300 hover:text-white"
-              : "text-gray-700 hover:text-gray-900"
-          } mb-2`}
-        >
-          <PlusCircleIcon className="h-5 w-5 mr-2" />
-          <span>New Board</span>
-        </button>
-        {showNewBoardInput && (
-          <div className="mb-4 flex items-center">
-            {" "}
-            <input
-              type="text"
-              value={newBoardName}
-              onChange={(e) => setNewBoardName(e.target.value)}
-              className={`${
-                darkMode
-                  ? "bg-gray-800 text-white"
-                  : "bg-white text-gray-800 border border-gray-300"
-              } p-2 text-sm rounded flex-grow`}
-              placeholder="Board name"
-              onKeyDown={(e) => e.key === "Enter" && handleCreateBoard()}
-            />
-            <button
-              onClick={handleCreateBoard}
-              className="ml-2 bg-indigo-600 text-white p-2 rounded text-sm"
-            >
-              Add
-            </button>
-          </div>
-        )}
-      </div>{" "}
       <div>
         <h2
           className={`${
@@ -131,7 +94,7 @@ const Sidebar = () => {
         } mt-6`}
       >
         <a
-          href="https://github.com"
+          href="https://github.com/HattySohaib/TaskBoard"
           target="_blank"
           rel="noopener noreferrer"
           className={`flex items-center text-sm ${

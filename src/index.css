@@ -78,7 +78,7 @@ button:focus-visible {
 }
 
 .dark-mode button {
-  background-color: #1f2937;
+  background-color: oklch(37.3% 0.034 259.733);
   /* Tailwind gray-800 */
   color: #f3f4f6;
   /* Tailwind gray-100 */
